@@ -117,7 +117,7 @@ export class ThreeViewportController {
   private readonly controls: OrbitControls;
   private readonly raycaster = new Raycaster();
   private readonly pointer = new Vector2();
-  private readonly grid = new GridHelper(40, 40, 0x3f536d, 0x26384d);
+  private readonly grid = new GridHelper(40, 40, 0x4b5563, 0x2b3440);
   private readonly resizeObserver: ResizeObserver | null;
   private callbacks: ViewerCallbacks;
   private records: LoadedInstance[] = [];
@@ -140,7 +140,7 @@ export class ThreeViewportController {
   ) {
     this.callbacks = callbacks;
     this.scene.name = 'USD Asset Studio Scene';
-    this.scene.background = new Color(0x101821);
+    this.scene.background = new Color(0x151b23);
 
     this.contentRoot.name = '__usd_composition_root';
     this.scene.add(this.contentRoot);
@@ -450,7 +450,7 @@ export class ThreeViewportController {
     const target = this.records.find((record) => record.id === this.selectedId)?.transformGroup;
     if (!target || new Box3().setFromObject(target, false).isEmpty()) return;
 
-    this.selectionHelper = new BoxHelper(target, 0x43d9ff);
+    this.selectionHelper = new BoxHelper(target, 0x5b8cff);
     this.selectionHelper.name = '__viewer_selection_helper';
     this.selectionHelper.renderOrder = 10_000;
     this.scene.add(this.selectionHelper);

@@ -18,7 +18,7 @@
   align-items: center;
   gap: 7px;
   min-width: 0;
-  color: var(--text-muted, #8fa3b8);
+  color: var(--muted, #667085);
   font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -46,4 +46,3 @@
     justify-content: flex-end;
   }
 }
-

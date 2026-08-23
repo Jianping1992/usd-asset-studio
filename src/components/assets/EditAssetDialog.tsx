@@ -52,7 +52,7 @@ export function EditAssetDialog({ asset, onClose }: { asset: Asset | null; onClo
       open={Boolean(asset)}
       onClose={onClose}
       title="编辑资产元数据"
-      eyebrow="DOMAIN METADATA"
+      eyebrow="资产元数据"
       description={asset ? `原始文件：${asset.originalName}` : undefined}
       wide
     >

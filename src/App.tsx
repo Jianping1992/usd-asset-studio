@@ -23,7 +23,7 @@ class AppErrorBoundary extends Component<{ children: ReactNode }, { failed: bool
     if (this.state.failed) {
       return (
         <main className="fatal-state">
-          <span className="eyebrow">APPLICATION ERROR</span>
+          <span className="eyebrow">应用加载失败</span>
           <h1>界面遇到异常</h1>
           <p>数据仍保存在本地服务中。刷新页面可重新初始化前端状态。</p>
           <button className="button button-primary" onClick={() => window.location.reload()}>

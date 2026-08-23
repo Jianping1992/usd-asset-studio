@@ -1,5 +1,5 @@
 import { BarChart } from 'echarts/charts';
-import { AriaComponent, GridComponent, TooltipComponent } from 'echarts/components';
+import { AriaComponent, GraphicComponent, GridComponent, TooltipComponent } from 'echarts/components';
 import * as echarts from 'echarts/core';
 import type { EChartsCoreOption } from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
@@ -7,7 +7,7 @@ import { useMemo } from 'react';
 import type { DashboardSlice } from '../../domain/models';
 import { EChart } from './EChart';
 
-echarts.use([BarChart, GridComponent, TooltipComponent, AriaComponent, CanvasRenderer]);
+echarts.use([BarChart, GridComponent, TooltipComponent, GraphicComponent, AriaComponent, CanvasRenderer]);
 
 interface AssetCategoryChartProps {
   data: DashboardSlice[];
@@ -32,9 +32,10 @@ export function AssetCategoryChart({ data }: AssetCategoryChartProps) {
       tooltip: {
         trigger: 'axis',
         axisPointer: { type: 'shadow' },
-        backgroundColor: '#10161d',
-        borderColor: '#2c3945',
-        textStyle: { color: '#f3f6f8' },
+        backgroundColor: '#ffffff',
+        borderColor: '#e5e9f0',
+        textStyle: { color: '#344054' },
+        extraCssText: 'box-shadow: 0 10px 28px rgba(16, 24, 40, .12); border-radius: 8px;',
         formatter: '{b}<br/>资产数量&nbsp;&nbsp;<b>{c}</b>',
       },
       xAxis: {
@@ -42,8 +43,8 @@ export function AssetCategoryChart({ data }: AssetCategoryChartProps) {
         minInterval: 1,
         axisLine: { show: false },
         axisTick: { show: false },
-        axisLabel: { color: '#7f8c96', fontSize: 11 },
-        splitLine: { lineStyle: { color: 'rgba(137, 153, 166, .12)' } },
+        axisLabel: { color: '#667085', fontSize: 11 },
+        splitLine: { lineStyle: { color: '#eef1f5' } },
       },
       yAxis: {
         type: 'category',
@@ -51,7 +52,7 @@ export function AssetCategoryChart({ data }: AssetCategoryChartProps) {
         axisLine: { show: false },
         axisTick: { show: false },
         axisLabel: {
-          color: '#c7d0d7',
+          color: '#475467',
           fontSize: 12,
           width: 88,
           overflow: 'truncate',
@@ -65,18 +66,18 @@ export function AssetCategoryChart({ data }: AssetCategoryChartProps) {
           barWidth: 13,
           showBackground: true,
           backgroundStyle: {
-            color: 'rgba(133, 149, 161, .08)',
+            color: '#f1f4f8',
             borderRadius: 2,
           },
           itemStyle: {
-            color: '#65d7c1',
-            borderRadius: [0, 2, 2, 0],
+            color: '#2563eb',
+            borderRadius: [0, 4, 4, 0],
           },
-          emphasis: { itemStyle: { color: '#8be8d5' } },
+          emphasis: { itemStyle: { color: '#1d4ed8' } },
           label: {
             show: true,
             position: 'right',
-            color: '#d8e0e5',
+            color: '#475467',
             fontSize: 11,
           },
         },
@@ -88,7 +89,7 @@ export function AssetCategoryChart({ data }: AssetCategoryChartProps) {
               type: 'text',
               left: 'center',
               top: 'middle',
-              style: { text: '暂无分类数据', fill: '#78858f', fontSize: 12 },
+              style: { text: '暂无分类数据', fill: '#98a2b3', fontSize: 12 },
             },
           ],
     };

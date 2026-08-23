@@ -33,7 +33,7 @@ export function AssetPreviewDialog({ asset, onClose }: AssetPreviewDialogProps) 
     <Modal
       open={Boolean(asset)}
       title={asset?.name ?? '三维资产预览'}
-      eyebrow="OPENUSD / HYDRA PREVIEW"
+      eyebrow="OpenUSD 三维预览"
       description={asset ? `${asset.category} · .${asset.format.toUpperCase()} · ${asset.originalName}` : undefined}
       full
       onClose={onClose}
@@ -65,4 +65,3 @@ export function AssetPreviewDialog({ asset, onClose }: AssetPreviewDialogProps) 
     </Modal>
   );
 }
-

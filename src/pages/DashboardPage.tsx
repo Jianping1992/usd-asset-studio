@@ -25,7 +25,6 @@ export function DashboardPage() {
   const metrics = [
     {
       label: '资产总数',
-      eyebrow: 'TOTAL ASSETS',
       value: dashboard.total,
       detail: '本地持久化资产',
       tone: 'neutral',
@@ -33,7 +32,6 @@ export function DashboardPage() {
     },
     {
       label: '待审核',
-      eyebrow: 'PENDING REVIEW',
       value: dashboard.pending,
       detail: dashboard.pending ? '需要处理的准入任务' : '审核队列已清空',
       tone: 'pending',
@@ -41,7 +39,6 @@ export function DashboardPage() {
     },
     {
       label: '已通过',
-      eyebrow: 'APPROVED',
       value: dashboard.approved,
       detail: `${approvalRate}% 审核通过率`,
       tone: 'approved',
@@ -49,7 +46,6 @@ export function DashboardPage() {
     },
     {
       label: '已驳回',
-      eyebrow: 'REJECTED',
       value: dashboard.rejected,
       detail: dashboard.rejected ? '可修改后重新送审' : '当前无退回资产',
       tone: 'rejected',
@@ -60,13 +56,10 @@ export function DashboardPage() {
   return (
     <div className={`dashboard-page ${loading ? 'is-loading' : ''}`} aria-busy={loading}>
       <section className="kpi-grid" aria-label="资产关键指标">
-        {metrics.map(({ label, eyebrow, value, detail, tone, icon: Icon }) => (
-          <article className={`kpi-card kpi-${tone}`} key={eyebrow}>
+        {metrics.map(({ label, value, detail, tone, icon: Icon }) => (
+          <article className={`kpi-card kpi-${tone}`} key={label}>
             <div className="kpi-heading">
-              <span>
-                <small>{eyebrow}</small>
-                <strong>{label}</strong>
-              </span>
+              <strong>{label}</strong>
               <span className="kpi-icon"><Icon size={19} strokeWidth={1.8} /></span>
             </div>
             <div className="kpi-value">{value.toLocaleString('zh-CN')}</div>
@@ -79,7 +72,7 @@ export function DashboardPage() {
         <article className="panel chart-panel category-panel">
           <header className="panel-header">
             <div>
-              <span className="eyebrow">ASSET TAXONOMY</span>
+              <span className="eyebrow">按业务分类统计</span>
               <h2>资产分类分布</h2>
             </div>
             <span className="panel-meta">{dashboard.byCategory.length} 类</span>
@@ -92,10 +85,10 @@ export function DashboardPage() {
         <article className="panel chart-panel status-panel">
           <header className="panel-header">
             <div>
-              <span className="eyebrow">REVIEW DISTRIBUTION</span>
+              <span className="eyebrow">当前准入状态</span>
               <h2>审核状态分布</h2>
             </div>
-            <span className="panel-meta">实时</span>
+            <span className="panel-meta">实时数据</span>
           </header>
           <div className="chart-body">
             <ReviewStatusChart data={dashboard.byStatus} total={dashboard.total} />
@@ -107,7 +100,7 @@ export function DashboardPage() {
         <article className="panel recent-assets-panel">
           <header className="panel-header">
             <div>
-              <span className="eyebrow">LATEST INGESTION</span>
+              <span className="eyebrow">最近更新的资产</span>
               <h2>最近入库</h2>
             </div>
             <Link className="text-link" to="/assets">进入资产库 <ArrowRight size={14} /></Link>
@@ -146,7 +139,7 @@ export function DashboardPage() {
         <article className="panel workflow-panel">
           <header className="panel-header">
             <div>
-              <span className="eyebrow">ASSET PIPELINE</span>
+              <span className="eyebrow">从入库到场景准入</span>
               <h2>准入流程概览</h2>
             </div>
             <span className="panel-meta">{completionRate}% 已审核</span>

@@ -68,7 +68,7 @@ export function UploadAssetDialog({ open, onClose }: { open: boolean; onClose: (
       open={open}
       onClose={onClose}
       title="上传仿真资产"
-      eyebrow="ASSET INGESTION"
+      eyebrow="上传资产"
       description="文件将保存至 Fastify 本地存储，元数据刷新后仍会保留。"
       wide
     >

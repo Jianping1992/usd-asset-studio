@@ -91,13 +91,13 @@ export function ReviewCenterPage() {
         <div className="review-toolbar-copy">
           <span className="toolbar-icon"><ClipboardCheck size={20} /></span>
           <div>
-            <span className="eyebrow">LOCAL REVIEW WORKFLOW</span>
+            <span className="eyebrow">本地审核流程</span>
             <h2>资产准入队列</h2>
             <p>检查资产摘要，填写备注并更新准入状态；已处理资产也可重新流转。</p>
           </div>
         </div>
         <div className="review-queue-stat">
-          <span><i /> PENDING</span>
+          <span><i /> 待处理</span>
           <strong>{counts.pending}</strong>
           <small>项等待处理</small>
         </div>
@@ -127,7 +127,7 @@ export function ReviewCenterPage() {
           <aside className="panel review-list-panel" aria-label={`${reviewViews.find((item) => item.value === view)?.label ?? ''}资产列表`}>
             <header className="review-list-header">
               <div>
-                <span className="eyebrow">REVIEW ITEMS</span>
+                <span className="eyebrow">审核资产</span>
                 <strong>{visibleAssets.length} 项资产</strong>
               </div>
               {loading && <LoaderCircle className="spin" size={16} aria-label="刷新中" />}
@@ -176,7 +176,7 @@ export function ReviewCenterPage() {
               <>
                 <header className="review-detail-header">
                   <div>
-                    <span className="eyebrow">ASSET INSPECTION</span>
+                    <span className="eyebrow">资产详情</span>
                     <h2>{selectedAsset.name}</h2>
                     <span className="asset-file-name">{selectedAsset.originalName}</span>
                   </div>

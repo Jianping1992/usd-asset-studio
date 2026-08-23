@@ -146,7 +146,7 @@ export function SceneComposerPage() {
     <div className="composer-page">
       <section className="composer-toolbar panel">
         <div className="composition-name-field">
-          <span className="eyebrow">SCENE CONFIG / JSON</span>
+          <span className="eyebrow">场景配置</span>
           <input value={name} maxLength={100} aria-label="组合名称" onChange={(event) => setName(event.target.value)} />
         </div>
         <div className="saved-composition-select">
@@ -171,7 +171,7 @@ export function SceneComposerPage() {
       <div className="composer-workspace">
         <aside className="composer-assets panel">
           <header>
-            <div><span className="eyebrow">APPROVED ASSETS</span><h2>场景资产</h2></div>
+            <div><span className="eyebrow">已通过资产</span><h2>场景资产</h2></div>
             <span className="counter">{sceneAssets.length} / 3</span>
           </header>
 
@@ -188,7 +188,7 @@ export function SceneComposerPage() {
                 >
                   <span className="tree-line" />
                   <Box size={15} />
-                  <span><strong>{asset.name}</strong><small>INSTANCE_0{index + 1}</small></span>
+                  <span><strong>{asset.name}</strong><small>实例 {String(index + 1).padStart(2, '0')}</small></span>
                   <i>{selectedId === item.assetId && <Crosshair size={13} />}</i>
                 </button>
               );
@@ -217,9 +217,9 @@ export function SceneComposerPage() {
 
         <section className="composer-viewport panel">
           <div className="viewport-toolbar">
-            <div><span className="live-dot" /> WEBGL VIEWPORT <small>HYDRA / THREE.JS</small></div>
+            <div><span className="live-dot" /> 三维场景预览 <small>OpenUSD · Three.js</small></div>
             <div>
-              <span className="viewport-count">{viewerInstances.length} OBJECTS</span>
+              <span className="viewport-count">{viewerInstances.length} 个对象</span>
               <button className="icon-button" title="相机自适应" onClick={() => viewportRef.current?.fitCamera()}><Focus size={17} /></button>
               <button className="icon-button" title="重置相机" onClick={() => viewportRef.current?.resetCamera()}><RotateCcw size={16} /></button>
             </div>
@@ -235,14 +235,14 @@ export function SceneComposerPage() {
           </div>
           <footer className="viewport-statusbar">
             <span>{status?.phase === 'loading' ? <LoaderCircle className="spin" size={13} /> : <i className="ok-dot" />} {status?.message ?? '等待场景资产'}</span>
-            <span>DPR ≤ 2.0</span>
-            <span>WASM LAZY</span>
-            <span>{window.crossOriginIsolated ? 'ISOLATED' : 'DEV CHECK'}</span>
+            <span>DPR ≤ 2</span>
+            <span>WASM 按需加载</span>
+            <span>{window.crossOriginIsolated ? '跨域隔离已启用' : '开发模式'}</span>
           </footer>
         </section>
 
         <aside className="inspector panel">
-          <header><span className="eyebrow">TRANSFORM INSPECTOR</span><h2>对象属性</h2></header>
+          <header><span className="eyebrow">Transform 调整</span><h2>对象属性</h2></header>
           {selectedTransform && selectedAsset ? (
             <>
               <div className="inspector-object">
@@ -250,12 +250,12 @@ export function SceneComposerPage() {
                 <div><strong>{selectedAsset.name}</strong><small>{selectedAsset.category}</small></div>
                 <button className="icon-button danger-action" title="移出场景" onClick={() => removeAsset(selectedAsset.id)}><Trash2 size={16} /></button>
               </div>
-              <TransformVector label="POSITION" unit="m" value={selectedTransform.position} onChange={(axis, value) => updateAxis('position', axis, value)} />
-              <TransformVector label="ROTATION" unit="deg" value={selectedTransform.rotation} onChange={(axis, value) => updateAxis('rotation', axis, value)} />
-              <TransformVector label="SCALE" unit="ratio" value={selectedTransform.scale} step={0.1} onChange={(axis, value) => updateAxis('scale', axis, value)} />
+              <TransformVector label="位置" unit="m" value={selectedTransform.position} onChange={(axis, value) => updateAxis('position', axis, value)} />
+              <TransformVector label="旋转" unit="deg" value={selectedTransform.rotation} onChange={(axis, value) => updateAxis('rotation', axis, value)} />
+              <TransformVector label="缩放" unit="ratio" value={selectedTransform.scale} step={0.1} onChange={(axis, value) => updateAxis('scale', axis, value)} />
               <button className="button button-ghost inspector-reset" onClick={resetTransform}><RotateCcw size={15} /> 重置对象 Transform</button>
               <div className="transform-json">
-                <span>COMPOSITION PAYLOAD</span>
+                <span>组合配置 JSON</span>
                 <code>{JSON.stringify(selectedTransform, null, 2)}</code>
               </div>
             </>

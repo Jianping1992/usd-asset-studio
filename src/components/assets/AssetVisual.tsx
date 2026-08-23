@@ -19,12 +19,10 @@ export function AssetVisual({ asset, compact = false }: { asset: Asset; compact?
         <img src={asset.thumbnailUrl} alt={`${asset.name} 缩略图`} loading="lazy" />
       ) : (
         <div className="asset-placeholder">
-          <span className="asset-orbit" />
           <Icon size={compact ? 28 : 44} strokeWidth={1.25} />
         </div>
       )}
       <span className="format-chip">.{asset.format.toUpperCase()}</span>
-      {!compact && <span className="visual-axis">X&nbsp;&nbsp;Y&nbsp;&nbsp;Z</span>}
     </div>
   );
 }

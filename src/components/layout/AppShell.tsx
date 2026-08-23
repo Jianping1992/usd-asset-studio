@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 
 const navigation = [
-  { to: '/dashboard', label: '运行看板', eyebrow: 'OVERVIEW', icon: ChartNoAxesCombined },
-  { to: '/assets', label: '资产库', eyebrow: 'ASSET LIBRARY', icon: Box },
-  { to: '/review', label: '审核中心', eyebrow: 'REVIEW FLOW', icon: ClipboardCheck },
-  { to: '/composer', label: '场景组合', eyebrow: 'SCENE COMPOSER', icon: Boxes },
+  { to: '/dashboard', label: '运行看板', icon: ChartNoAxesCombined },
+  { to: '/assets', label: '资产库', icon: Box },
+  { to: '/review', label: '审核中心', icon: ClipboardCheck },
+  { to: '/composer', label: '场景组合', icon: Boxes },
 ];
 
 const pageMeta: Record<string, { title: string; description: string }> = {
@@ -27,38 +27,27 @@ export function AppShell() {
         <div className="brand">
           <div className="brand-mark"><Cpu size={21} /></div>
           <div>
-            <strong>USD ASSET</strong>
-            <span>STUDIO / 01</span>
+            <strong>USD Asset Studio</strong>
+            <span>具身仿真资产平台</span>
           </div>
           <button className="icon-button sidebar-close" aria-label="关闭导航" onClick={() => setMobileOpen(false)}>
             <X size={18} />
           </button>
         </div>
 
-        <div className="system-chip">
-          <span className="pulse-dot" />
-          <div>
-            <small>LOCAL PIPELINE</small>
-            <strong>SIMULATION READY</strong>
-          </div>
-        </div>
-
+        <span className="nav-section-label">工作空间</span>
         <nav className="nav-list" aria-label="主要导航">
-          {navigation.map(({ to, label, eyebrow, icon: Icon }, index) => (
+          {navigation.map(({ to, label, icon: Icon }) => (
             <NavLink key={to} to={to} onClick={() => setMobileOpen(false)}>
-              <span className="nav-index">0{index + 1}</span>
               <Icon size={19} strokeWidth={1.8} />
-              <span>
-                <small>{eyebrow}</small>
-                <strong>{label}</strong>
-              </span>
+              <strong>{label}</strong>
             </NavLink>
           ))}
         </nav>
 
         <div className="sidebar-footer">
-          <div><CircleDot size={14} /> OpenUSD 26.05 / WASM</div>
-          <span>COOP · COEP ISOLATED</span>
+          <div><CircleDot size={14} /> OpenUSD Web Runtime</div>
+          <span>本地数据 · 按需加载</span>
         </div>
       </aside>
 
@@ -76,8 +65,7 @@ export function AppShell() {
             </div>
           </div>
           <div className="topbar-meta">
-            <span className="runtime-state"><i /> DATA SERVICE ONLINE</span>
-            <time>2026.08.23</time>
+            <span className="runtime-state"><CircleDot size={14} /> 本地工作区</span>
           </div>
         </header>
         <main className="page-content"><Outlet /></main>

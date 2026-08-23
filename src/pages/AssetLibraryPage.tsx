@@ -4,7 +4,6 @@ import {
   FilePenLine,
   Grid2X2,
   List,
-  MoreHorizontal,
   Plus,
   Search,
   SlidersHorizontal,
@@ -63,14 +62,14 @@ export function AssetLibraryPage() {
     <div className="page-stack asset-library-page">
       <section className="library-hero panel-accent">
         <div>
-          <span className="eyebrow">EMBODIED ASSET REGISTRY</span>
+          <span className="eyebrow">资产管理</span>
           <h2>机器人仿真资产工作台</h2>
-          <p>统一管理 OpenUSD 资产的业务元数据、准入状态与 Web 三维预览。资产卡片保持无 Canvas，只有按需预览才启动 WebGL。</p>
+          <p>统一管理 OpenUSD 资产的元数据、准入状态与 Web 三维预览，仅在打开预览时按需启动 WebGL。</p>
         </div>
         <div className="hero-stats">
-          <div><span>{String(total).padStart(2, '0')}</span><small>ASSETS</small></div>
-          <div><span>{String(statusCounts.approved).padStart(2, '0')}</span><small>APPROVED</small></div>
-          <div><span>{String(statusCounts.pending).padStart(2, '0')}</span><small>IN REVIEW</small></div>
+          <div><span>{total}</span><small>全部资产</small></div>
+          <div><span>{statusCounts.approved}</span><small>已通过</small></div>
+          <div><span>{statusCounts.pending}</span><small>待审核</small></div>
         </div>
       </section>
 
@@ -78,7 +77,6 @@ export function AssetLibraryPage() {
         <label className="search-field">
           <Search size={17} />
           <input value={search} placeholder="搜索名称、标签或描述…" onChange={(event) => setSearch(event.target.value)} />
-          <kbd>⌘ K</kbd>
         </label>
         <div className="filter-group">
           <SlidersHorizontal size={16} />
@@ -101,8 +99,8 @@ export function AssetLibraryPage() {
       </section>
 
       <div className="results-meta">
-        <span>REGISTRY / <strong>{total} ITEMS</strong></span>
-        <span>{loading ? 'SYNCING DATA…' : 'LOCAL DATA SYNCED'}</span>
+        <span>共 <strong>{total}</strong> 项资产</span>
+        <span>{loading ? '正在更新…' : '数据已更新'}</span>
       </div>
 
       {!loading && assets.length === 0 ? (
@@ -120,7 +118,6 @@ export function AssetLibraryPage() {
               <div className="asset-card-body">
                 <div className="asset-card-heading">
                   <div><small>{asset.category}</small><h3>{asset.name}</h3></div>
-                  <button className="icon-button" aria-label="更多操作"><MoreHorizontal size={18} /></button>
                 </div>
                 <p>{asset.description || '暂无业务描述。'}</p>
                 <div className="tag-row">
