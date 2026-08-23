@@ -1,0 +1,28 @@
+node_modules/
+dist/
+.vite/
+*.log
+*.tsbuildinfo
+.DS_Store
+
+# Local credentials and machine-specific secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Uploaded runtime files are local data. Keep the curated demo assets only.
+storage/assets/*
+!storage/assets/demo-*.usda
+
+# Atomic JSON-store temporary files
+data/*.tmp
+
+# Local screenshot tooling
+playwright-report/
+test-results/
