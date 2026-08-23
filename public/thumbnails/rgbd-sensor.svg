@@ -1,17 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="RGB-D传感器缩略图">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e1727"/><stop offset="1" stop-color="#173d4b"/></linearGradient></defs>
-  <rect width="640" height="400" rx="28" fill="url(#bg)"/>
+  <rect width="640" height="400" rx="28" fill="#f4f7fb"/>
   <g transform="translate(135 104)">
-    <rect x="25" y="45" width="340" height="125" rx="30" fill="#14577c" stroke="#60d7f5" stroke-width="6"/>
-    <rect x="55" y="22" width="280" height="48" rx="16" fill="#27475d"/>
-    <circle cx="120" cy="108" r="42" fill="#08111d" stroke="#94a3b8" stroke-width="8"/>
+    <rect x="25" y="45" width="340" height="125" rx="30" fill="#dbeafe" stroke="#3b82f6" stroke-width="6"/>
+    <rect x="55" y="22" width="280" height="48" rx="16" fill="#94a3b8"/>
+    <circle cx="120" cy="108" r="42" fill="#1f2937" stroke="#94a3b8" stroke-width="8"/>
     <circle cx="120" cy="108" r="18" fill="#334155"/>
-    <circle cx="270" cy="108" r="42" fill="#062626" stroke="#2dd4bf" stroke-width="8"/>
-    <circle cx="270" cy="108" r="18" fill="#14b8a6" opacity=".65"/>
-    <circle cx="195" cy="150" r="8" fill="#4ade80"/>
+    <circle cx="270" cy="108" r="42" fill="#123c35" stroke="#12a66a" stroke-width="8"/>
+    <circle cx="270" cy="108" r="18" fill="#34d399"/>
+    <circle cx="195" cy="150" r="8" fill="#22c55e"/>
     <path d="M195 170v75M118 245h154" stroke="#64748b" stroke-width="18" stroke-linecap="round"/>
   </g>
-  <text x="34" y="54" fill="#e0f2fe" font-family="system-ui,sans-serif" font-size="22" font-weight="650">RGB-D SENSOR RIG</text>
-  <text x="36" y="83" fill="#5eead4" font-family="system-ui,sans-serif" font-size="14" letter-spacing="2">SENSOR / ROS 2</text>
 </svg>
-
