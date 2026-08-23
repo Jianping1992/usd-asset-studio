@@ -1,0 +1,90 @@
+#usda 1.0
+(
+    defaultPrim = "MobileManipulator"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "MobileManipulator" (
+    kind = "component"
+)
+{
+    custom string semanticClass = "mobile_manipulator"
+    custom string simulationSource = "Isaac Sim"
+
+    def Cube "Chassis"
+    {
+        float3[] extent = [(-0.55, -0.14, -0.38), (0.55, 0.14, 0.38)]
+        color3f[] primvars:displayColor = [(0.055, 0.32, 0.56)]
+        double size = 1
+        float3 xformOp:scale = (1.1, 0.28, 0.76)
+        double3 xformOp:translate = (0, 0.34, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cylinder "LeftWheel"
+    {
+        uniform token axis = "X"
+        color3f[] primvars:displayColor = [(0.035, 0.045, 0.055)]
+        double height = 0.16
+        double radius = 0.2
+        double3 xformOp:translate = (-0.48, 0.2, 0.29)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Cylinder "RightWheel"
+    {
+        uniform token axis = "X"
+        color3f[] primvars:displayColor = [(0.035, 0.045, 0.055)]
+        double height = 0.16
+        double radius = 0.2
+        double3 xformOp:translate = (0.48, 0.2, 0.29)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Cylinder "ArmColumn"
+    {
+        uniform token axis = "Y"
+        color3f[] primvars:displayColor = [(0.94, 0.47, 0.08)]
+        double height = 0.72
+        double radius = 0.1
+        double3 xformOp:translate = (0, 0.82, -0.06)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Sphere "ShoulderJoint"
+    {
+        color3f[] primvars:displayColor = [(0.98, 0.62, 0.16)]
+        double radius = 0.15
+        double3 xformOp:translate = (0, 1.17, -0.06)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Cylinder "UpperArm"
+    {
+        uniform token axis = "Y"
+        color3f[] primvars:displayColor = [(0.94, 0.47, 0.08)]
+        double height = 0.68
+        double radius = 0.075
+        float3 xformOp:rotateXYZ = (0, 0, -32)
+        double3 xformOp:translate = (0.18, 1.44, -0.06)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+    }
+
+    def Sphere "ElbowJoint"
+    {
+        color3f[] primvars:displayColor = [(0.98, 0.62, 0.16)]
+        double radius = 0.12
+        double3 xformOp:translate = (0.36, 1.72, -0.06)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Cube "Gripper"
+    {
+        color3f[] primvars:displayColor = [(0.12, 0.16, 0.2)]
+        double size = 1
+        float3 xformOp:scale = (0.25, 0.08, 0.18)
+        double3 xformOp:translate = (0.55, 1.85, -0.06)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}

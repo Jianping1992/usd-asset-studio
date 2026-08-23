@@ -1,0 +1,79 @@
+#usda 1.0
+(
+    defaultPrim = "WarehouseRack"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "WarehouseRack" (
+    kind = "component"
+)
+{
+    custom string semanticClass = "warehouse_storage"
+    custom string simulationSource = "digital_twin"
+
+    def Cube "LeftPost"
+    {
+        color3f[] primvars:displayColor = [(0.11, 0.2, 0.29)]
+        double size = 1
+        float3 xformOp:scale = (0.12, 2.4, 0.12)
+        double3 xformOp:translate = (-1.25, 1.2, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "RightPost"
+    {
+        color3f[] primvars:displayColor = [(0.11, 0.2, 0.29)]
+        double size = 1
+        float3 xformOp:scale = (0.12, 2.4, 0.12)
+        double3 xformOp:translate = (1.25, 1.2, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "LowerShelf"
+    {
+        color3f[] primvars:displayColor = [(0.1, 0.48, 0.7)]
+        double size = 1
+        float3 xformOp:scale = (2.62, 0.12, 0.9)
+        double3 xformOp:translate = (0, 0.38, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "MiddleShelf"
+    {
+        color3f[] primvars:displayColor = [(0.1, 0.48, 0.7)]
+        double size = 1
+        float3 xformOp:scale = (2.62, 0.12, 0.9)
+        double3 xformOp:translate = (0, 1.18, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "UpperShelf"
+    {
+        color3f[] primvars:displayColor = [(0.1, 0.48, 0.7)]
+        double size = 1
+        float3 xformOp:scale = (2.62, 0.12, 0.9)
+        double3 xformOp:translate = (0, 1.98, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "LowerCrate"
+    {
+        custom string semanticLabel = "pallet_box"
+        color3f[] primvars:displayColor = [(0.76, 0.38, 0.12)]
+        double size = 1
+        float3 xformOp:scale = (0.82, 0.56, 0.62)
+        double3 xformOp:translate = (-0.55, 0.72, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "UpperCrate"
+    {
+        custom string semanticLabel = "shipping_carton"
+        color3f[] primvars:displayColor = [(0.89, 0.57, 0.2)]
+        double size = 1
+        float3 xformOp:scale = (0.72, 0.54, 0.58)
+        double3 xformOp:translate = (0.45, 1.52, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}

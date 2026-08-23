@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="仓储货架缩略图">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101827"/><stop offset="1" stop-color="#183c4b"/></linearGradient></defs>
+  <rect width="640" height="400" rx="28" fill="url(#bg)"/>
+  <g transform="translate(126 74)">
+    <path d="M10 10v260M390 10v260" stroke="#9fb8ca" stroke-width="20"/>
+    <path d="M0 78h400M0 166h400M0 254h400" stroke="#38bdf8" stroke-width="18"/>
+    <rect x="44" y="94" width="110" height="60" rx="6" fill="#d97706"/>
+    <path d="M44 115h110M99 94v60" stroke="#fbbf24" stroke-opacity=".55" stroke-width="4"/>
+    <rect x="224" y="182" width="124" height="60" rx="6" fill="#ea9c25"/>
+    <path d="M224 203h124M286 182v60" stroke="#fde68a" stroke-opacity=".55" stroke-width="4"/>
+  </g>
+  <text x="34" y="54" fill="#e0f2fe" font-family="system-ui,sans-serif" font-size="22" font-weight="650">WAREHOUSE RACK</text>
+  <text x="36" y="83" fill="#7dd3fc" font-family="system-ui,sans-serif" font-size="14" letter-spacing="2">ENVIRONMENT / DIGITAL TWIN</text>
+</svg>
+

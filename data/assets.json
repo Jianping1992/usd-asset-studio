@@ -1,0 +1,62 @@
+[
+  {
+    "id": "asset-demo-mobile-manipulator",
+    "name": "仓储移动操作机器人",
+    "originalName": "mobile-manipulator.usda",
+    "format": "usda",
+    "category": "机器人本体",
+    "tags": [
+      "移动操作",
+      "Isaac Sim",
+      "机械臂"
+    ],
+    "description": "面向仓储拣选任务的移动底盘与六轴机械臂语义化演示资产。",
+    "status": "approved",
+    "fileUrl": "/uploads/demo-mobile-manipulator.usda",
+    "thumbnailUrl": "/thumbnails/mobile-manipulator.svg",
+    "size": 2751,
+    "createdAt": "2026-08-21T08:30:00.000Z",
+    "updatedAt": "2026-08-22T03:20:00.000Z",
+    "reviewComment": "拓扑和尺寸适合浏览器演示，审核通过。"
+  },
+  {
+    "id": "asset-demo-warehouse-rack",
+    "name": "数字孪生仓储货架",
+    "originalName": "warehouse-rack.usda",
+    "format": "usda",
+    "category": "仿真场景",
+    "tags": [
+      "仓储",
+      "Digital Twin",
+      "语义标注"
+    ],
+    "description": "带托盘箱语义标签的仓储货架，可用于导航、抓取和合成数据场景组合。",
+    "status": "approved",
+    "fileUrl": "/uploads/demo-warehouse-rack.usda",
+    "thumbnailUrl": "/thumbnails/warehouse-rack.svg",
+    "size": 2475,
+    "createdAt": "2026-08-21T09:10:00.000Z",
+    "updatedAt": "2026-08-22T04:15:00.000Z",
+    "reviewComment": "语义标签完整，审核通过。"
+  },
+  {
+    "id": "asset-demo-rgbd-sensor",
+    "name": "RGB-D 感知传感器支架",
+    "originalName": "rgbd-sensor-rig.usda",
+    "format": "usda",
+    "category": "传感器",
+    "tags": [
+      "RGB-D",
+      "ROS 2",
+      "感知"
+    ],
+    "description": "用于机器人视觉感知演示的双目 RGB-D 传感器与安装支架。",
+    "status": "pending",
+    "fileUrl": "/uploads/demo-rgbd-sensor-rig.usda",
+    "thumbnailUrl": "/thumbnails/rgbd-sensor.svg",
+    "size": 2023,
+    "createdAt": "2026-08-23T01:40:00.000Z",
+    "updatedAt": "2026-08-23T01:40:00.000Z",
+    "reviewComment": ""
+  }
+]

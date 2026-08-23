@@ -1,0 +1,46 @@
+[
+  {
+    "id": "composition-demo-warehouse-picking",
+    "name": "仓储拣选工作单元",
+    "assets": [
+      {
+        "assetId": "asset-demo-warehouse-rack",
+        "position": [
+          0,
+          0,
+          -1.2
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "assetId": "asset-demo-mobile-manipulator",
+        "position": [
+          0,
+          0,
+          1.15
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "createdAt": "2026-08-22T06:00:00.000Z",
+    "updatedAt": "2026-08-22T06:00:00.000Z"
+  }
+]
