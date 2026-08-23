@@ -1,0 +1,49 @@
+.viewport {
+  width: 100%;
+  height: min(72vh, 820px);
+  min-height: 420px;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: var(--text-muted, #8fa3b8);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  flex: none;
+  gap: 8px;
+}
+
+@media (max-width: 680px) {
+  .viewport {
+    height: 64vh;
+    min-height: 320px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .footer,
+  .actions {
+    justify-content: flex-end;
+  }
+}
+
